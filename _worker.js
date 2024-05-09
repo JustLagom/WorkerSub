@@ -513,7 +513,8 @@ export default {
 						path = `/?ed=2560&proxyIP=${foundProxyIP}`;
 					} else {
 						// 如果没有找到匹配项，随机选择一个proxyIP
-						path = `/?ed=2560&proxyIP=proxyip.vultr.fxxk.dedyn.io`;
+						const randomProxyIP = 'proxyip.multacom.fxxk.dedyn.io';
+						path = `/?ed=2560&proxyIP=${randomProxyIP}`;
 					}
 				}
 				
