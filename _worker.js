@@ -21,7 +21,6 @@ let subconverter = 'apiurl.v1.mk'; //在线订阅转换后端，目前使用肥�
 let subconfig = 'https://raw.githubusercontent.com/JustLagom/WorkerSub/main/urltestconfig.ini'; //订阅转换配置文件
 
 let link = '';
-
 let RproxyIP = 'false';
 let proxyIPs = [
 	'proxyip.sg.fxxk.dedyn.io',
@@ -47,6 +46,7 @@ let proxyhosts = [//本地代理域名池
 ];
 let proxyhostsURL = 'https://raw.githubusercontent.com/cmliu/CFcdnVmess2sub/main/proxyhosts';//在线代理域名池URL
 let EndPS = '';//节点名备注内容
+
 let 协议类型;
 let FileName = 'WorkerSub';
 let SUBUpdateTime = 6; 
