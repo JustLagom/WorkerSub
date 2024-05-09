@@ -519,22 +519,22 @@ export default {
 				}
 				
 				let 伪装域名 = host ;
-				let 节点备注 = `${EndPS}`;
-				let 最终路径 = `${path}`;
-				
+				let 最终路径 = path ;
+				let 节点备注 = EndPS ;
 				if(proxyhosts && (host.includes('.workers.dev') || host.includes('pages.dev'))) {
-					伪装域名 = proxyhosts[Math.floor(Math.random() * proxyhosts.length)];
 					最终路径 = `/${host}${path}`;
+					伪装域名 = proxyhosts[Math.floor(Math.random() * proxyhosts.length)];
+					节点备注 = `${EndPS}请尽快绑定域名`;
 					sni = 伪装域名;
 				}
 
 				if (协议类型 == 'Trojan'){
-					const trojanLink = `trojan://${uuid}@${address}:${port}?security=tls&sni=${sni}&fp=chrome&type=ws&host=${伪装域名}&path=${encodeURIComponent(最终路径)}#${encodeURIComponent(addressid + 节点备注)}`;
-
+					const type = 'trojan';
+					const trojanLink = `${type}://${uuid}@${address}:${port}?security=tls&sni=${sni}&fp=chrome&type=ws&host=${伪装域名}&path=${encodeURIComponent(最终路径)}#${encodeURIComponent(addressid + 节点备注)}`;
 					return trojanLink;
 				} else {
-					const vlessLink = `vless://${uuid}@${address}:${port}?encryption=none&security=tls&sni=${sni}&fp=chrome&type=ws&host=${伪装域名}&path=${encodeURIComponent(最终路径)}#${encodeURIComponent(addressid + 节点备注)}`;
-			
+					const type = 'vless';
+					const vlessLink = `${type}://${uuid}@${address}:${port}?encryption=none&security=tls&sni=${sni}&fp=chrome&type=ws&host=${伪装域名}&path=${encodeURIComponent(最终路径)}#${encodeURIComponent(addressid + 节点备注)}`;
 					return vlessLink;
 				}
 
