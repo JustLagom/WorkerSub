@@ -8,7 +8,7 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 let token= 'nginx';
-let pdomain = 'www.bing.com';
+let pdomain = 'librespeed.speedtestcustom.com';
 
 export default {
 	/**
